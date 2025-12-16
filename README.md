@@ -1,28 +1,17 @@
-# Week 9 – Backend MongoDB (REST API Design)
+## Backend Design – Week 9
 
-## 🔗 GitHub Repository
-https://github.com/Aarsh2103/week9-backend-mongodb
+This backend is built using Node.js, Express.js, and MongoDB with Mongoose.
 
----
+### Planned REST API Endpoints
 
-## 📌 Backend Design Description
+1. GET /api/items  
+   - Purpose: Retrieve all items from the database  
+   - MongoDB Query: Item.find()
 
-This backend is designed for a web application coursework using **Node.js**, **Express**, and **MongoDB**.  
-The backend follows a RESTful architecture and is responsible for handling CRUD operations for application data.
+2. POST /api/items  
+   - Purpose: Add a new item to the database  
+   - MongoDB Query: new Item(data).save()
 
-MongoDB is used as the database, and **Mongoose** is used as the ODM (Object Data Modeling) library.
-
----
-
-## 📊 Planned REST API Endpoints
-
-### 1️⃣ Create Data (POST)
-**Endpoint:**  
-`POST /api/items`
-
-**Description:**  
-Creates a new record in the MongoDB database.
-
-**MongoDB Query (Mongoose):**
-```js
-Item.create(req.body)
+### Database
+MongoDB is used as the database.  
+Mongoose is used to define schemas and interact with MongoDB collections.
