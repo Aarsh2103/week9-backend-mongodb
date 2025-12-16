@@ -10,10 +10,17 @@ mongoose.connect("mongodb://127.0.0.1:27017/week9db")
 
 const Item = require("./models/Item");
 
-// READ ALL DATA
+// READ ALL
 app.get("/api/items", async (req, res) => {
   const items = await Item.find();
   res.json(items);
+});
+
+// CREATE
+app.post("/api/items", async (req, res) => {
+  const item = new Item(req.body);
+  await item.save();
+  res.json(item);
 });
 
 app.listen(5000, () => {
